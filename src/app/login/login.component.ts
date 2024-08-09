@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent {
   password: string = '';
   strength: string = '';
+  showPassword: boolean = false;
 
   calculateStrength(): void {
     if (this.password.length === 0) {
@@ -30,4 +31,9 @@ export class LoginComponent {
       this.strength = 'medium';
     }
   }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
+
 }
