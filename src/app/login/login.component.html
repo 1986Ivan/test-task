@@ -1,0 +1,13 @@
+<div class="password-container">
+  <input
+    type="password"
+    [(ngModel)]="password"
+    (input)="calculateStrength()"
+    placeholder="Enter your password"
+  />
+  <div class="strength-indicators">
+    <div [ngClass]="{'gray': strength === 'empty', 'red': strength === 'too-short' || strength === 'easy', 'yellow': strength === 'medium', 'green': strength === 'strong'}" class="strength-box"></div>
+    <div [ngClass]="{'gray': strength === 'empty' || strength === 'easy', 'red': strength === 'too-short', 'yellow': strength === 'medium', 'green': strength === 'strong'}" class="strength-box"></div>
+    <div [ngClass]="{'gray': strength === 'empty' || strength !== 'strong', 'red': strength === 'too-short', 'green': strength === 'strong'}" class="strength-box"></div>
+  </div>
+</div>
